@@ -1,19 +1,25 @@
 ﻿#include "logic.h"
 
 bool is_digits_count_even(long long n){
-	if (n < 0) {
-		return "ERORR 404";
+	n = n < 0 ? -n : n;
+
+	if (n == 0) {
+		return false;
 	}
 
+	int m = 0;
+
 	while (n > 0) {
-		int m = 0;
-		m = n % 10;
+		
+		n % 10;
 		n /= 10;
-		if (m % 2 == 0) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		m++;
+		
+	}
+	if (m % 2 == 0) {
+		return true;
+	}
+	else {
+		return false;
 	}
 }
